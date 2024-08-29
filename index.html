@@ -39,10 +39,13 @@
                 <div class="post__footer">
                     <div class="likes js-likes">
                         <div class="likes__cta">
+                            <!-- :class="likedPosts.includes(post.id) ? 'like-button--liked' : ''" -->
                             <a
+                                :class="{
+                                    'like-button--liked': likedPosts.includes(post.id)
+                                }"
                                 @click.prevent="incrementLikes(postIndex)"
                                 class="like-button  js-like-button"
-                                :class="likedPosts.includes(post.id) ? 'like-button--liked' : ''"
                                 href="#"
                                 :data-postid="post.id">
                                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
